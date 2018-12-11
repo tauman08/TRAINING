@@ -12,17 +12,25 @@ appData.incom 				= [];
 appData.savings 			= false;
 
 for (let i=0;i<2;i++) {
-    let a = prompt('Введите обязательную статью расходов в этом месяце'),
+    let a = +prompt('Введите обязательную статью расходов в этом месяце'),
         b = prompt('Во сколько обойдется?','');
-    if (typeof(a)!=null&&typeof(b)!=null&&a!=''&&b!=''&&a.length<50){
+    if (typeof(a)==='string' && typeof(a)!=null && typeof(b)!=null && a !='' && b !='' && a.length < 50){
         console.log('done')
         appData.expenses[a]=b;
     }else{
         i--;
     }
 };
-appData.moneyPerday=appData.budget/30*100^0)/100;
+appData.moneyPerday=appData.budget/30;
 alert('Ежедневный бюджет: '+appData.moneyPerday);
-
+ if (appData.moneyPerday<100){
+    console.log('минимальный уровень достатка');
+ }else if (appData.moneyPerday<2000){
+    console.log('средний уровень достатка');
+ }else if (appData.moneyPerday>2000){
+    console.log('высокий уровень достатка');
+ }else{
+     console.log('Произошла ошибка.')
+ }
 
 
