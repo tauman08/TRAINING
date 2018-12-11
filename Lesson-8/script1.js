@@ -6,16 +6,15 @@ time  = prompt('Введите дату в формате YYYY-MM-DD');
 var appData = {};
 appData.budget 				= money;
 appData.timeData 			= time;
-appDate.expenses 			= {prompt(“Введите обязательную статью расходов в этом месяце”):+prompt(“Во сколько обойдется”),
-                            prompt(“Введите обязательную статью расходов в этом месяце”):+prompt(“Во сколько обойдется”)};
+appDate.expenses 			= {};
 appDate.optionalExpenses 	= {};
 appDate.incom 				= [];
 appData.savings 			= false;
-var sumMoney;
-for (var key in appData.expenses) {
-    sumMoney + = appData.expenses[key];
+
+for (i=0,i<2,i++){
+    appData.expenses[prompt(“Введите обязательную статью расходов в этом месяце”)]=prompt(“Введите обязательную статью расходов в этом месяце”);
 }
-alert(sumMoney/30);
+alert(appData.budget/30);
 
 
 
