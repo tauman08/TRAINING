@@ -64,9 +64,9 @@ appData.chooseOptExpenses: function(){
     i++;
     }while(i<4) 
 }
-/*
+
 appData.chooseExpenses();
 appData.detectDayBudget();
 appData.detectLevel();
 appData.checkSavings();
-*/
+
