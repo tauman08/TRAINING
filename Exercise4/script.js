@@ -90,7 +90,7 @@ var appData = {
         appData.incom.forEach(function(item){
             strAlert=strAlert+'\r\n'+item+', ';
         });
-        strAlert = strAlert.slice(0,strAlert.length-3);
+        
         alert(strAlert);
         strAlert = 'Наша программа включает в себя данные: ';
         for (const key in appData) {
@@ -98,6 +98,9 @@ var appData = {
                 strAlert = strAlert+'\r\n'+key+': '+appData[key]+', ';              
             }   
         }
+       /* for (const iterator of appData) {
+            strAlert = strAlert+'\r\n'+iterator+', '; 
+        }*/
         strAlert = strAlert.slice(0,strAlert.length-3);
         alert(strAlert);
     }
