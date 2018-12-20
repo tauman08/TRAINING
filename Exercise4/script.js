@@ -71,8 +71,9 @@ var appData = {
         appData.incom.sort();
     }
 };
+/*
 appData.chooseExpenses();
 appData.detectDayBudget();
 appData.detectLevel();
 appData.checkSavings();
-
+*/
