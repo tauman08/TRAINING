@@ -62,13 +62,44 @@ var appData = {
 
             appData.optionalExpenses[i] = prompt('Статья необязательных расходов');
             i++;
-        } while (i < 4)
-    }
-    chooseIncome: function(){
-        let items = prompt('Что принесет дополнительный доход?(введите через запятую)','');
+        } while (i < 4);
+    },
+    chooseIncome: function () {
+        let allOk = true; 
+        do{
+        allOk = true;
+        var items = prompt('Что принесет дополнительный доход?(введите через запятую)','');
+        if (typeof(items) == null) {
+            allOk = false;
+            alert('необходимо указать  дополнительный доход');
+        }
+        else if (typeof(items) !== 'string'){
+             allOk = false;
+             alert('Можно указывать только строку');
+        }
+        else if ((typeof(items) == 'string')&&(items.trim() == '')){
+            allOk = false;
+            alert('Нельзя указывать пустую строку');  
+        };
+        }while(allOk==false);
         appData.incom = items.split(', ');
         appData.incom.push(prompt('Может что-нибудь еще?',''));
         appData.incom.sort();
+
+        let strAlert = 'Способы доп. заработка: ';
+        appData.incom.forEach(function(item){
+            strAlert=strAlert+'\r\n'+item+', ';
+        });
+        strAlert = strAlert.slice(0,strAlert.length-3);
+        alert(strAlert);
+        strAlert = 'Наша программа включает в себя данные: ';
+        for (const key in appData) {
+            if (appData.hasOwnProperty(key)) {
+                strAlert = strAlert+'\r\n'+key+': '+appData[key]+', ';              
+            }   
+        }
+        strAlert = strAlert.slice(0,strAlert.length-3);
+        alert(strAlert);
     }
 };
 /*
